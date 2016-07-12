@@ -20,7 +20,7 @@ def teardown():
 
 def test_client():
     global ADDR
-    client = msgpackrpc.Client(ADDR, unpack_encoding = 'utf-8')
+    client = msgpackrpc.Client(ADDR, unpack_params=dict(encoding='utf-8'))
 
     f1 = client.call('echo', 'foo')
     f2 = client.call('echo', 'bar')
